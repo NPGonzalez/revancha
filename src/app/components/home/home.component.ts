@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { DataService } from '../../srevices/data.service';
+import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-home',
@@ -11,7 +13,7 @@ export class HomeComponent implements OnInit {
   error: boolean = false;
   errorMessage: string;
   tutorials: any = [];
-  constructor(private dataService: DataService) { }
+  constructor(private dataService: DataService, private router:Router ) { }
 
   getData() {
     this.dataService.getData()
@@ -27,15 +29,14 @@ export class HomeComponent implements OnInit {
   }
 
 
-
-
-
   ngOnInit() {
     this.getData();
   }
 
   goEdit() {
+    this.router.navigate(['edit']);
     console.log('Hola');
+
   }
 
 }
