@@ -2,21 +2,48 @@
     <span>Tutoriales</span>
 </mat-toolbar>
 
-<div class="main-container">
-    <mat-form-field class="example-full-width">
-        <input matInput placeholder="Ex. Pizza" value="Buscar por título">
-    </mat-form-field>
 
-    <section>
-        <div class="example-button-row">
-            <button mat-stroked-button color="primary">Eliminar Todos</button>
-        </div>
-    </section>
-
-    <section>
-        <div class="example-button-container">
-            <button mat-mini-fab color="info" aria-label="Example icon button with a plus one icon">+
-</button>
-        </div>
-    </section>
+<div class="first-container">
+    <textarea placeholder="Buscar por título"></textarea>
 </div>
+
+<div class="second-container">
+    <span><mat-label>Ordenado por</mat-label></span>
+    <mat-form-field>
+        <mat-select>
+
+            <mat-option value="option">Título</mat-option>
+            <mat-option value="option">Fecha</mat-option>
+        </mat-select>
+        <!-- <mat-hint align="end">Here's the dropdown arrow ^</mat-hint> -->
+    </mat-form-field>
+</div>
+<section>
+    <div class="container">
+        <mat-card *ngFor="let tutorial of tutorials">
+            <mat-card-content>
+                <div class="nuevo">
+                    <mat-card-title>
+                        {{tutorial.nombre }}
+                    </mat-card-title>
+                    <span>{{tutorial.fecha | date}}</span>
+                </div>
+                <mat-card-subtitle> {{tutorial.profesor}}</mat-card-subtitle>
+            </mat-card-content>
+        </mat-card>
+    </div>
+
+</section>
+
+<section>
+    <div class="example-button-row main-container first-container">
+        <button mat-stroked-button color="primary">Eliminar Todos</button>
+    </div>
+</section>
+
+<section>
+    <div class="example-button-container second-container">
+        <button mat-mini-fab color="accent" aria-label="Example icon button with a plus icon">+
+</button>
+    </div>
+</section>
