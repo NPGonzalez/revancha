@@ -1,0 +1,15 @@
+.flex {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 30px;
+}
+
+textarea {
+    margin-bottom: 10px;
+    padding-top: 15px;
+    padding-left: 10px;
+    resize: none;
+    width: 97%;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+}
